@@ -1,0 +1,24 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:mysql://10.144.137.22:3306/gold_goods_dev?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+    username: dev_gg
+    password: Sino@1234
+    hikari:
+      pool-name: test/ds1
+      connection-timeout: 45000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 5
+      minimum-idle: 0
+      connection-test-query: "select 1"
+      validation-timeout: 1000
+      isolate-internal-queries: true
+mybatis:
+  type-aliases-package: com.myself.test.domain
+  mapper-locations: classpath*:/mappings/**/*.xml
+  configuration:
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+    lazy-load-trigger-methods: ""
